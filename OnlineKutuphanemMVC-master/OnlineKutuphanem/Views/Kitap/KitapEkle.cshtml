@@ -1,0 +1,41 @@
+﻿@model OnlineKutuphanem.Models.Entity.Kitap
+
+@{
+    ViewBag.Title = "KitapEkle";
+    
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div class="main-div">
+    <div class="panel">
+        <h2>Kitap Ekleme Sayfası</h2>
+    </div>
+    <form class="form-group" method="post">
+        <label>Kitap Adı</label>
+        <div class="form-group">
+            @Html.TextBoxFor(k=>k.AD,new { @class="form-control"})
+        </div>
+        <label>Kitap Kategorisi</label>
+        <div class="form-group">
+          @Html.DropDownListFor(k=>k.KATEGORI,(List<SelectListItem>)ViewBag.kategori,new { @class="form-control"})
+        </div>
+        <label>Kitap Yazarı</label>
+        <div class="form-group">
+            @Html.DropDownListFor(k => k.YAZAR, (List<SelectListItem>)ViewBag.yazar, new { @class = "form-control" })
+        </div>
+        <label>Basım Yılı</label>
+        <div class="form-group">
+            @Html.TextBoxFor(k => k.BASIMYILI, new { @class = "form-control" })
+            <label>Yayınevi</label>
+            <div class="form-group">
+                @Html.TextBoxFor(k => k.YAYIMEVİ, new { @class = "form-control" })
+            </div>
+            <label>Sayfa Sayısı</label>
+            <div class="form-group">
+                @Html.TextBoxFor(k => k.SAYFASAYFASI, new { @class = "form-control" })
+            </div>
+            <input type="hidden" name="Durum" value="True" />
+            <button type="submit" class="btn btn-success"> Kitabı Ekle</button>
+            <a href="/Kitap/Index" class="btn btn-primary"><i class="glyphicon glyphicon-backward"></i>    Kitap Listesine Dön</a>
+</form>
+</div>

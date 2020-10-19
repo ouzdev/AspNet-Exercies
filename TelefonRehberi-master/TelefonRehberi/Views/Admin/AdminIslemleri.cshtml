@@ -1,0 +1,31 @@
+﻿@using TelefonRehberi.Models
+@model TelefonRehberi.Models.ViewModels.LoginModel
+@{
+    ViewBag.Title = "AdminIslemleri";
+    Layout = "~/Views/Shared/_AdminUI.cshtml";
+}
+
+<h2>Şifre Değiştirme Sayfası</h2>
+
+<div class="main-div">
+    <div class="panel">
+    </div>
+    @using (Html.BeginForm("AdminIslemleri", "Admin", FormMethod.Post))
+    {@ViewBag.hata
+        <br />
+    @Html.Label("Yeni Şifre")
+    <div class="form-group">
+        @Html.TextBoxFor(k => k.Sifre, new { @class = "form-control",@type="password"})
+        @Html.ValidationMessageFor(x => x.SifreTekrar, "", new { @style = "color:red" })
+    </div>
+    @Html.Label("Yeni Şifre Tekrar")
+    <div class="form-group">
+        @Html.TextBoxFor(k => k.SifreTekrar, new { @class = "form-control",@type="password" })
+        @Html.ValidationMessageFor(x => x.SifreTekrar, "", new { @style = "color:red" })
+
+    </div>
+
+    <input type="submit" class="btn btn-success" value="Şifreyi Güncelle">
+}
+    @*@Html.ButtonSubmit("submit", "btn btn-success", "glyphicon glyphicon-floppy-save", "Personeli Ekle")*@
+</div>

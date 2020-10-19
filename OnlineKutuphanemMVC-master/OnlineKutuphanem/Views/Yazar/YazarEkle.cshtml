@@ -1,0 +1,28 @@
+﻿@model OnlineKutuphanem.Models.Entity.Yazar
+@{
+    ViewBag.Title = "YazarEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+<div class="main-div">
+    <div class="panel">
+        <h2>Yazar Ekle</h2>
+    </div>
+    <form class="form-group" method="post">
+        <label>Yazar Adı</label>
+        <div class="form-group">
+            @Html.TextBoxFor(x => x.AD, new { @class = "form-control", @placeholder = "Lütfen yazar adı giriniz." })
+        </div>
+        <label>Yazar Soyadı</label>
+        <div class="form-group">
+            @Html.TextBoxFor(x => x.SOYAD, new { @class = "form-control", @placeholder = "Lütfen yazar adı giriniz." })
+        </div>
+        <label>Yazar Detayı</label>
+        <div class="form-group">
+            @Html.TextAreaFor(x => x.DETAY, new { @class = "form-control", @placeholder = "Lütfen yazara ait bilgileri giriniz." })
+        </div>
+        <button type="submit" class="btn btn-success">Yazar Ekle</button>
+        <a href="/Yazar/Index" class="btn btn-primary"><i class="glyphicon glyphicon-align-left"></i>    Yazar Listesine Dön</a>
+    </form>
+</div>

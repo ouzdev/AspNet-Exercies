@@ -1,0 +1,19 @@
+﻿@model OnlineKutuphanem.Models.Entity.Kategori
+@{
+    ViewBag.Title = "KategoriEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+    <div class="main-div">
+        <div class="panel">
+            <h4>Kategori Ekle</h4>
+        </div>
+        <form class="form-group" method="post">
+            <div class="form-group">
+                <input type="text" class="form-control" id="AD" name="AD" placeholder="Kategori Adı">
+            </div>
+            <button type="submit" class="btn btn-success">Kategoriyi Ekle</button>
+            <a href="/Kategori/Index" class="btn btn-primary"><i class="glyphicon glyphicon-menu-left"></i>    Kategori Listesine Dön</a>
+        </form>
+    </div>
+

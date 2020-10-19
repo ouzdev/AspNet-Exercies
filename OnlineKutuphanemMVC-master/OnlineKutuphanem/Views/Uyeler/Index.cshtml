@@ -1,0 +1,48 @@
+﻿@using OnlineKutuphanem.Models.Entity
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Uyeler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Üyeler</h2>
+
+
+<a href="/Uyeler/UyeEkle"><button class="btn btn-success">Üye Ekle</button></a>
+<br />
+<br />
+<table class="table table-striped">
+    <tr>
+        <td>ID</td>
+        <td>Adı</td>
+        <td>Soyadı</td>
+        <td>E-Posta Adresi</td>
+        <td>Kullanıcı Adı</td>
+        <td>Şifre</td>
+        <td>Telefon</td>
+        <td>Okul</td>
+        <td>Güncelle</td>
+        <td>Sil</td>
+    </tr>
+    @foreach (var uye in Model)
+    {
+        <tr>
+            <td>@uye.ID</td>
+            <td>@uye.AD</td>
+            <td>@uye.SOYAD</td>
+            <td>@uye.MAİL</td>
+            <td>@uye.KULLANICIADI</td>
+            <td>@uye.SIFRE</td>
+            <td>@uye.TELEFON</td>
+            <td>@uye.OKUL</td>
+            <td width="30">@Html.ActionLink("Güncelle", "UyeGuncelle", new { id = uye.ID }, new { @class = "btn btn-success btn-sm" })</td>
+            <td width="20">@Html.ActionLink("Sil", "UyeSil", new { id = uye.ID }, new { @class = "btn btn-danger btn-sm", onclick = "return confirm('Üyeyi Silmek İstediğinizden Eminmisiniz ?')" })</td>
+
+
+        </tr>
+    }
+</table>
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
+

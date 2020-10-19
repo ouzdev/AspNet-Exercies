@@ -1,0 +1,51 @@
+﻿@using TelefonRehberi.Kutuphane
+@model TelefonRehberi.Models.Personel
+
+@{
+    ViewBag.Title = "PersonelEkle";
+    Layout = "~/Views/Shared/_AdminUI.cshtml";
+}
+
+<h2>Personel Ekleme Sayfası</h2>
+@*Personel ekleme formu Razor syntax kullanarak yazıldı. *@
+
+<div class="main-div">
+    <div class="panel">
+    </div>
+    @using (Html.BeginForm("PersonelEkle", "Personel", FormMethod.Post))
+    {
+        @Html.Label("Personel Adı")
+        <div class="form-group">
+            @Html.TextBoxFor(k => k.AD, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.AD, "", new { @style = "color:red" })
+        </div>
+        @Html.Label("Personel Soyadı")
+        <div class="form-group">
+            @Html.TextBoxFor(k => k.SOYAD, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.SOYAD, "", new { @style = "color:red" })
+
+        </div>
+        @Html.Label("Personel Telefonu")
+        <div class="form-group">
+            @Html.TextBoxFor(k => k.TELEFON, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.TELEFON, "", new { @style = "color:red" })
+
+        </div>
+        @Html.Label("Personelin Departmanını Seçiniz")
+        <div class="form-group">
+            @Html.DropDownListFor(k => k.DepartmanID, (List<SelectListItem>)ViewBag.departman, new { @class = "form-control" })
+        </div>
+        @Html.Label("Personelin Yöneticisini Seçiniz")
+        <div class="form-group">
+            @Html.DropDownListFor(k => k.YONETICI, (List<SelectListItem>)ViewBag.yonetici, "", new { @class = "form-control" })
+        </div>
+        @Html.Label("Personel Detayı")
+        <div class="form-group">
+            @Html.TextAreaFor(k => k.DETAY, new { @class = "form-control" })
+        </div>
+        <input type="submit" class="btn btn-success" value="Personeli Kaydet">
+        @Html.ButtonLink(Url.Action("Index", "Personel"), "btn btn-primary col-md-offset-0", "glyphicon glyphicon-chevron-left", "Personel Listesine Dön")
+
+    }
+    @*@Html.ButtonSubmit("submit", "btn btn-success", "glyphicon glyphicon-floppy-save", "Personeli Ekle")*@
+</div>

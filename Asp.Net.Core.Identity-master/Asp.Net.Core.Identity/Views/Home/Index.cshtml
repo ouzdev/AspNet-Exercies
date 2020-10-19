@@ -1,0 +1,56 @@
+﻿@model UserSignInViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <form asp-action="GirisYap" class="w-50 mx-auto p-4 mt-3 shadow">
+
+        <div class="form-group text-center">
+            <img src="https://yinnepal.files.wordpress.com/2017/11/admin.png?w=640" alt="Alternate Text" width="150" height="150" />
+        </div>
+
+        <div class="form-group text-center">
+            <label asp-for="@Model.Username"></label>
+            <input asp-for="@Model.Username" class="form-control text-center" placeholder="Kullanıcı Adınızı Giriniz" />
+        </div>
+
+        <div class="form-group text-center">
+            <label asp-for="@Model.Password"></label>
+            <input asp-for="@Model.Password" class="form-control text-center" placeholder="Şifrenizi Giriniz." />
+        </div>
+        <div class="form-group" style="padding-left:25px;">
+
+            <input asp-for="@Model.RememberMe" class="form-check-input" />
+            <label class="form-check-label">Beni Hatırla.</label>
+        </div>
+
+        <div class="alert alert-danger" role="alert" asp-validation-summary="ModelOnly">
+
+        </div>
+
+        <div class="form-group text-center">
+            <input type="submit" class="btn btn-primary btn-lg col-md-12" value="Giriş Yap" />
+
+        </div>
+
+        <div class="form-group text-center">
+
+            Hesabın Yok mu ?<hr /> <a asp-action="KayitOl" class="btn btn-primary btn-xs" style="">Kayit Ol</a>
+        </div>
+
+    </form>
+
+    <script src="~/lib/twitter-bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>

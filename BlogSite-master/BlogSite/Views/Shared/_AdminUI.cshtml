@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>@ViewBag.Title</title>
+
+    <!-- Font Awesome Icons -->
+    <link href="~/Content/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <link href="~/Scripts/summernote/summernote-bs4.css" rel="stylesheet" />
+    <!-- Theme style -->
+    <link href="~/Content/adminlte.css" rel="stylesheet" />
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-orange navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+        <!-- lAYOUT start-->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="index3.html" class="brand-link">
+
+                <img src="~/Images/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+                     style="opacity: .8">
+                <span class="brand-text font-weight-light">Blog Sitesi</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user panel (optional) -->
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+
+                        <img src="~/Images/avatar.png" class="img-circle elevation-2" alt="User Image">
+                    </div>
+                    <div class="info">
+                        <a href="#" class="d-block">Oğuzcan Genç</a>
+                    </div>
+                </div>
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <li class="nav-header"> BLOG AYARLARI</li>
+                        <li class="nav-item">
+                            <a href="/Admin/BlogSettings/" class="nav-link">
+                                <i class="nav-icon fas fa-blog"></i>
+                                <p>
+                                    Blog Ayarları
+                                    <span class="badge badge-warning right">3</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-header">KATEGORİ AYARLARI</li>
+                        <li class="nav-item">
+                            <a href="/Category/CategoryList" class="nav-link">
+                                <i class="nav-icon fas fa-list-ul"></i>
+                                <p>
+                                    Kategoriler
+                                    <span class="badge badge-warning right">3</span>
+                                </p>
+                            </a>
+                        </li>
+                      
+                        <li class="nav-header">MAKALE AYARLARI</li>
+                        <li class="nav-item">
+                            <a href="/Articles/ArticleList" class="nav-link">
+                                <i class="nav-icon fas fa-newspaper"></i>
+                                <p>
+                                    Makaleler
+                                    <span class="badge badge-warning right">3</span>
+                                </p>
+                            </a>
+                        </li>
+                       
+                
+                        <li class="nav-item">
+                            <a href="/Articles/PublishedArticles" class="nav-link">
+                                <i class="nav-icon fas fa-upload"></i>
+                                <p>
+                                    Yayınlanmış Makaleler
+                                    <span class="badge badge-warning right">3</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Articles/DraftArticles" class="nav-link">
+                                <i class="nav-icon fas fa-pause-circle"></i>
+                                <p>
+                                    Taslak Makaleler
+                                    <span class="badge badge-warning right">3</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-header">ADMİN AYARLARI</li>
+                        <li class="nav-item">
+                            <a href="pages/calendar.html" class="nav-link">
+                                <i class="nav-icon fas fa-key"></i>
+                                <p>
+                                    Şifre Değiştir
+                                    <span class="badge badge-warning right">3</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-header">KULLANICI AYARLARI</li>
+                        <li class="nav-item">
+                            <a href="/Users/UserList" class="nav-link">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    Kullanıcılar
+                                    <span class="badge badge-info right">3</span>
+                                </p>
+                            </a>
+                        </li>
+                       
+
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+        <!-- lAYOUT end-->
+        <!-- Sayfa Body-->
+        <div class="content-wrapper">
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0 text-dark">@ViewBag.Title</h1>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Anasayfa</a></li>
+                                <li class="breadcrumb-item active">@ViewBag.Title</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <hr />
+                    @RenderBody()
+                    <hr />
+                </div>
+            </div>
+        </div>
+        <!-- Sayfa Body-->
+        <!--Footer Alanı -->
+        <footer class="main-footer">
+            <!-- To the right -->
+            <div class="float-right d-none d-sm-inline">
+                Anything you want
+            </div>
+            <!-- Default to the left -->
+            <strong>Copyright &copy; 2014-2020 | Oğuzcan Genç CMS</a>. </strong>   All rights reserved.
+        </footer>
+    </div>
+    <!--Footer Alanı -->
+    <script src="~/Scripts/chart.js/Chart.min.js"></script>
+    <!-- jQuery -->
+    <script src="~/Scripts/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/Scripts/adminlte.min.js"></script>
+    <!-- InputMask -->
+    <script src="~/Scripts/moment/moment.min.js"></script>
+    <script src="~/Scripts/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+    <!--Text Editor-->
+    <script src="~/Scripts/summernote/summernote-bs4.min.js"></script>
+</body>
+</html>
+
+@RenderSection("adminIndex",required:false)
+@RenderSection("userDateTime",required:false)
+@RenderSection("editorScript", required: false)
+

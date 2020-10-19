@@ -1,0 +1,35 @@
+﻿@using OnlineKutuphanem.Models.Entity;
+@model List<Kategori>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+    <a href="/Kategori/KategoriEkle" class="btn btn-primary">Kategori Ekle</a>
+    <br />
+    <br />
+    <table class="table table-hover">
+        <tr>
+            <td>ID</td>
+            <td>Kategoriler</td>
+            <td>Güncelle</td>
+            <td>Sil</td>
+        </tr>
+        @foreach (var kategoriler in Model)
+        {
+            <tr>
+                <td>
+                    @kategoriler.ID
+                </td>
+                <td>
+                    @kategoriler.AD
+                </td>
+                <td width="20">
+                    <a href="/Kategori/KategoriAl/@kategoriler.ID"><button class="btn btn-success btn-sm"> <i class="glyphicon glyphicon-record"></i> Güncelle</button></a>
+                </td>
+                <td width="20">
+                    <a href="/Kategori/KategoriSil/@kategoriler.ID"><button class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i> Sil</button></a>    
+                </td>
+            </tr>
+        }
+
+    </table>

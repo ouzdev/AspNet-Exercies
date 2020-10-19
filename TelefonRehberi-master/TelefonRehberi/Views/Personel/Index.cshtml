@@ -1,0 +1,61 @@
+﻿
+@using TelefonRehberi.Models
+@using TelefonRehberi.Kutuphane
+@using PagedList
+@using PagedList.Mvc
+@model IEnumerable<Personel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminUI.cshtml";
+}
+
+<h2>Personel Listesi</h2>
+<br />
+@Html.ButtonLink("/Personel/PersonelEkle", "btn btn-warning", "glyphicon glyphicon-plus", " Personel Ekle")
+<br />
+<br />
+<table class="table table-hover">
+    <tr>
+        <td><b>ID</b></td>
+        <td><b>Personel İsmi</b></td>
+        <td><b>Telefon</b></td>
+        <td><b>Personel Detayları</b></td>
+        <td><b>Personel Departmanı</b></td>
+        <td><b>Yöneticisi</b></td>
+        <td><b>Güncelle</b></td>
+        <td><b>Sil</b></td>
+    </tr>
+    @foreach (var personeller in Model)
+    {
+        <tr>
+            <td>
+                @personeller.ID
+            </td>
+            <td>@personeller.AD&nbsp;@personeller.SOYAD</td>
+            <td>@personeller.TELEFON</td>
+            <td>@personeller.DETAY</td>
+            <td>@personeller.Departman.DepartmanAd</td>
+            @if (personeller.YONETICIAD != null)
+            {
+                <td><button class="btn btn-success">@personeller.YONETICIAD</button></td>
+            }
+            else
+            {
+                <td><button class="btn btn-warning">Yöneticisi Yok</button></td>
+            }
+
+            <td width="20">
+                @Html.ButtonLink(Url.Action("PersonelGuncelle", "Personel", new { id = personeller.ID }), "btn btn-success btn-sm", "glyphicon glyphicon-record", "Güncelle")
+            </td>
+            <td width="20">
+                @Html.ButtonLink(Url.Action("PersonelSil", "Personel", new { id = personeller.ID }), "btn btn-danger btn-sm", "glyphicon glyphicon-trash", "Sil")
+            </td>
+        </tr>
+    }
+
+
+
+</table>
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
+

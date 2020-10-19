@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="80deb162bed8403888082c717bac8f39" Name="Diagram1">
+        <EntityTypeShape EntityType="OG_BlogSiteDb_2020Model.Article" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OG_BlogSiteDb_2020Model.Author" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OG_BlogSiteDb_2020Model.Category" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OG_BlogSiteDb_2020Model.Comment" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OG_BlogSiteDb_2020Model.Image" Width="1.5" PointX="5.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OG_BlogSiteDb_2020Model.SiteSetting" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OG_BlogSiteDb_2020Model.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OG_BlogSiteDb_2020Model.Tag" Width="1.5" PointX="5.25" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OG_BlogSiteDb_2020Model.User" Width="1.5" PointX="3" PointY="14.25" IsExpanded="true" />
+        <AssociationConnector Association="OG_BlogSiteDb_2020Model.FK_Articles_Authors" ManuallyRouted="false" />
+        <AssociationConnector Association="OG_BlogSiteDb_2020Model.FK_Articles_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="OG_BlogSiteDb_2020Model.FK_Comments_Articles" ManuallyRouted="false" />
+        <AssociationConnector Association="OG_BlogSiteDb_2020Model.FK_Images_Articles" ManuallyRouted="false" />
+        <AssociationConnector Association="OG_BlogSiteDb_2020Model.FK_Tags_Articles" ManuallyRouted="false" />
+        <AssociationConnector Association="OG_BlogSiteDb_2020Model.AuthorUser" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

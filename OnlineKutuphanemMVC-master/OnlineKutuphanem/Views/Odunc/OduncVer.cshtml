@@ -1,0 +1,39 @@
+﻿@model OnlineKutuphanem.Models.Entity.Hareket
+@{
+    ViewBag.Title = "OduncVer";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+
+<div class="main-div">
+    <div class="panel">
+        <h2>Ödünç Kitap Verme Sayfası</h2>
+    </div>
+    <form class="form-group" method="post">
+        <label>Üye ID</label>
+        <div class="form-group">
+            @Html.TextBoxFor(O => O.UYE, new { @class = "form-control" })
+        </div>
+        <label>Kitap ID</label>
+        <div class="form-group">
+            @Html.TextBoxFor(O => O.KITAP, new { @class = "form-control" })
+        </div>
+        <label>Personel ID</label>
+        <div class="form-group">
+            @Html.TextBoxFor(O => O.PERSONEL, new { @class = "form-control" })
+        </div>
+        <label>Kitap Alış Tarihi</label>
+        <div class="form-group">
+            <input type="text" class="form-control" id="ALISTARIHI" name="ALISTARIHI" value="@DateTime.Now.ToShortDateString()" readonly>
+        </div>
+        <label>Kitap İade Tarihi</label>
+        <div class="form-group">
+            <input type="text" class="form-control" id="IADETARIHI" name="IADETARIHI" value="@DateTime.Now.AddDays(7).ToShortDateString()" readonly>
+        </div>
+        
+        <input type="hidden"   name="ISLEMDURUM" value="False" />
+        <button type="submit" class="btn btn-success"> Kitabı Ödünç Ver</button>
+        <a href="/Kitap/Index" class="btn btn-primary"><i class="glyphicon glyphicon-backward"></i>    Ödünç Verme Listesine Dön</a>
+    </form>
+</div>

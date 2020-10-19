@@ -1,0 +1,61 @@
+﻿@using OnlineKutuphanem.Models.Entity;
+@model List<Kitap>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Kitaplar</h2>
+
+<a href="/Kitap/KitapEkle"><button class="btn btn-primary">Kitap Ekle</button></a>
+<br />
+<br />
+@using (Html.BeginForm("Index", "Kitap", FormMethod.Get))
+{
+   
+<label>Aranacak Kitap Adını Giriniz..</label> @Html.TextBox("p");
+    <input type="submit" value="Ara" />
+}
+
+<br />
+<table class="table table-bordered ">
+    <tr>
+        <td>ID</td>
+        <td>AD</td>
+        <td>Yazar</td>
+        <td>Kategori</td>
+        <td>Basım Yılı</td>
+        <td>Yayınevi</td>
+        <td>Sayfa Sayısı</td>
+        <td>Durum</td>
+        <td>Güncelle</td>
+        <td>Sil</td>
+
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.AD</td>
+            <td>@item.Yazar1.AD&nbsp;@item.Yazar1.SOYAD</td>
+            <td>@item.Kategori1.AD</td>
+            <td>@item.BASIMYILI</td>
+            <td>@item.YAYIMEVİ</td>
+            <td>@item.SAYFASAYFASI</td>
+            <td>
+                @if (item.DURUM == true)
+                {
+                    <span class="btn btn-success center-block btn-sm">Mevcut</span>
+                }
+                else
+                {
+                    <span class="btn btn-danger center-block btn-sm">Ödünç Verildi</span>
+                }
+                    </td>
+            <td> @Html.ActionLink("Güncelle", "KitapGuncelle", new { id = item.ID }, new { @class = "btn btn-success btn-sm " })</td>
+            <td>@Html.ActionLink("Sil", "KitapSil", new { id = item.ID }, new { @class = "btn btn-danger btn-sm", onclick = "return confirm('Yazarı Silmek İstediğinizden Eminmisiniz ?')" })</td>
+        </tr>
+    }
+</table>
+

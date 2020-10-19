@@ -1,0 +1,28 @@
+﻿@model OnlineKutuphanem.Models.Entity.Personel
+@{
+    ViewBag.Title = "PersonelGuncelle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>PersonelGuncelle</h2>
+
+@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post))
+{
+    <div class="main-div">
+        <div class="panel">
+            <h2>Personel Güncelleme Sayfası</h2>
+        </div>
+
+            <label>Personel Adı</label>
+            <div class="form-group">
+                @Html.TextBoxFor(p => p.PERSONEL1, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.PERSONEL1, "", new { @style = "color:red" })
+            </div>
+
+            <button type="submit" class="btn btn-success"> Personeli Güncelle</button>
+            <a href="/Personel/Index" class="btn btn-primary"><i class="glyphicon glyphicon-backward"></i>    Personel Listesine Geri Dön</a>
+ 
+    </div>
+
+}
+

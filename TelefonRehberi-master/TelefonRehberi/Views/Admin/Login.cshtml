@@ -1,0 +1,50 @@
+﻿@using TelefonRehberi.Kutuphane
+@model TelefonRehberi.Models.Admin
+@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+    <head>
+
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link href="~/Content/admin-login.css" rel="stylesheet" />
+
+
+    </head>
+<body>
+    <div class="container login-container">
+        <div class="row" style="background-color:aliceblue">
+            <div class="col-md-12 login-form">
+                <div class="profile-img">
+                    <img src="https://www.sonsuzteknoloji.com/wp-content/uploads/2017/11/rehber.png" alt="profile_img" height="140px" width="140px;">
+                </div>
+                <h3>Telefon Rehberi</h3>
+                @using (Html.BeginForm("Login", "Admin", FormMethod.Post))
+                {
+                    <div>
+                        <p>@ViewBag.hata</p>
+                        <p><span style="color:green">@ViewBag.basarili</span></p>
+                    </div>
+
+                    <div class="form-group">
+
+                        @Html.TextBoxFor(a => a.KULLANICIADI, new { @type = "text", @class = "form-control", @placeholder = "Kullanıcı Adınız." })
+                    </div>
+                    <div class="form-group">
+
+                        @Html.TextBoxFor(a => a.SIFRE, new { @type = "password", @class = "form-control", @placeholder = "Şifreniz." })
+                    </div>
+                    <div class="form-group">
+
+                        @Html.ButtonSubmit("submit","btn btn-primary btn-lg btn-block",null,null)
+                    </div>
+
+                }
+
+
+            </div>
+        </div>
+    </div>
+  </body>

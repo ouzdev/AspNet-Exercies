@@ -1,0 +1,34 @@
+﻿@using OnlineKutuphanem.Models.Entity;
+@model List<Yazar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Yazarlar</h2>
+
+<a href="/Yazar/YazarEkle"><button class="btn btn-primary">Yazar Ekle</button></a>
+<br />
+<br />
+<table class="table table-bordered table-responsive">
+    <tr>
+        <td>ID</td>
+        <td>AD</td>
+        <td>SOYAD</td>
+        <td>DETAY</td>
+        <td>Güncelle</td>
+        <td>Sil</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.AD</td>
+            <td>@item.SOYAD</td>
+            <td>@item.DETAY</td>
+            <td>@Html.ActionLink("Güncelle","YazarGuncelle",new { id=item.ID},new {@class="btn btn-success btn-sm"})</td>
+            <td>@Html.ActionLink("Sil","YazarSil",new {id=item.ID },new {@class="btn btn-danger btn-sm",onclick="return confirm('Yazarı Silmek İstediğinizden Eminmisiniz ?')"})</td>
+        </tr>
+    }
+</table>
+

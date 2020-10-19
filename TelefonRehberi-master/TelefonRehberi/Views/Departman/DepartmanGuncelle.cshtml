@@ -1,0 +1,30 @@
+﻿@model TelefonRehberi.Models.Departman
+@using TelefonRehberi.Kutuphane
+@{
+    ViewBag.Title = "DepartmanGuncelle";
+    Layout = "~/Views/Shared/_AdminUI.cshtml";
+}
+
+<h2>Departman Güncelleme Sayfası</h2>
+
+
+<div class="main-div">
+    <div class="panel">
+    </div>
+    @using (Html.BeginForm("DepartmanGuncelle", "Departman", FormMethod.Post))
+    {
+        @Html.Label("Departman Adı")
+        <div class="form-group">
+            @Html.TextBoxFor(k => k.DepartmanAd, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.DepartmanAd, "", new { @style = "color:red" })
+
+        </div>
+        <input type="submit" class="btn btn-success" value="Departmanı Güncelle">
+        @Html.ButtonLink(Url.Action("Index", "Departman"), "btn btn-primary col-md-offset-0", "glyphicon glyphicon-chevron-left", "Departman Listesine Dön")
+
+    }
+
+    @*@Html.ButtonSubmit("submit", "btn btn-success", "glyphicon glyphicon-floppy-save", "Personeli Ekle")*@
+
+
+</div>

@@ -1,0 +1,53 @@
+﻿@model OnlineKutuphanem.Models.Entity.Hareket
+@{
+    ViewBag.Title = "OduncIade";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Ödünç Kitap Iade Sayfası</h2>
+
+
+<div class="main-div">
+    <div class="panel">
+
+    </div>
+    @using (Html.BeginForm("OduncIadeGuncelle", "Odunc", FormMethod.Post))
+    {
+        <form class="form-group" method="post">
+            <label>Hareket ID</label>
+            <div class="form-group">
+                @Html.TextBoxFor(h => h.ID, new { @class = "form-control" })
+            </div>
+            <label>Kitap AD</label>
+            <div class="form-group">
+                @Html.TextBoxFor(h => h.Kitap1.AD, new { @class = "form-control" })
+            </div>
+            <label>Üye Bilgisi</label>
+            <div class="form-group">
+                @Html.TextBoxFor(h => h.Uyeler.AD, new { @class = "form-control" })
+            </div>
+            <label>Personel Bilgisi</label>
+            <div class="form-group">
+                @Html.TextBoxFor(h => h.PERSONEL, new { @class = "form-control" })
+            </div>
+            <label>Alış Tarihi</label>
+            <div class="form-group">
+                @Html.TextBoxFor(h => h.ALISTARIHI, "{0: dd/MM/yyyy}", new { @class = "form-control" })
+            </div>
+            <label>Iade Tarihi</label>
+            <div class="form-group">
+                @Html.TextBoxFor(h => h.IADETARIHI, "{0: dd/MM/yyyy}", new { @class = "form-control" })
+            </div>
+            <label>Üyenin Kitabı Getirdiği Tarih</label>
+            <div class="form-group">
+                <input class="form-control" type="type" name="UYEGETIRTARIH" value="@DateTime.Now.ToShortDateString()" />
+            </div>
+            <label>Geç Gelen Gün Sayısı</label>
+            <div class="form-group">
+                <input class="form-control" type="type" id="GecIade" value="@ViewBag.gecGun" readonly />
+            </div>
+            <button type="submit" class="btn btn-success"> Kitabı İade Al</button>
+            <a href="/Odunc/Index" class="btn btn-primary"><i class="glyphicon glyphicon-backward"></i>   Kitap Iade Listesine Geri Dön</a>
+        </form>
+    }
+</div>

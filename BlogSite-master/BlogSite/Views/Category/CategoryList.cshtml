@@ -1,0 +1,93 @@
+﻿@using BlogSite.Models
+@model List<Category>
+@{
+    ViewBag.Title = "Kategori Listesi";
+    Layout = "~/Views/Shared/_AdminUI.cshtml";
+}
+
+
+<!-- Main content -->
+
+<div>
+    <a href="/Category/CategoryAdd" class="btn btn-primary btn-block"><span class="fa fa-plus-circle"></span>  Kategori Ekle</a>
+</div>
+
+<br />
+<section class="content">
+
+    <!-- Default box -->
+    <div class="card">
+
+        <div class="card-header">
+            <h3 class="card-title">Kategoriler</h3>
+
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="card-body p-0">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th style="width: 1%">
+                            ID
+                        </th>
+                        <th style="width: 30%">
+                            Kategori Adı
+                        </th>
+
+
+                        <th style="width: 6%" class="text-center">
+                            İşlemler
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (Category item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @item.CategoryID
+                            </td>
+                            <td>
+                                <a>
+                                    @item.Name
+                                </a>
+                                <br />
+                                <small>
+                                    Oluşturulma Tarihi @item.RegisterDate
+                                </small>
+                            </td>
+
+
+                            <td class="project-actions text-right">
+                                <a class="btn btn-primary btn-sm" href="#">
+                                    <i class="fas fa-folder">
+                                    </i>
+                                    Detaylar
+                                </a>
+
+                                <a href="/Category/CategoryUpdate/@item.CategoryID"><button class="btn btn-info btn-sm"><i class="fas fa-pencil-alt"></i> Düzenle</button></a>
+
+
+                                <a href="/Category/CategoryDelete/@item.CategoryID"><button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Sil</button></a>
+                            </td>
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+
+</section>
+<!-- /.content -->

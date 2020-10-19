@@ -1,0 +1,65 @@
+﻿  @*AdminUI için gerekli css, js kaynakları(CDN olarak tanımlandığı için internet bağlantısı gereklidir.)*@ 
+ <head>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <link href="~/Content/admin-panel.css" rel="stylesheet" />
+    </head>
+
+<div class="container">
+    <div class="row profile">
+        @*/Menü linkleri*@
+        <div class="col-md-3">
+            <div class="profile-sidebar">
+               
+                <div class="profile-userpic">
+                    <img src="https://www.sonsuzteknoloji.com/wp-content/uploads/2017/11/rehber.png" class="img-responsive" alt="">
+                </div>
+             
+                <div class="profile-usertitle">
+                    <div class="profile-usertitle-name">
+                        Telefon Rehberi
+                    </div>
+                  
+                </div>
+                
+                <div class="profile-usermenu">
+                    <ul class="nav">
+                        <li class="active">
+                            <a href="/Departman/Index">
+                                <i class="glyphicon glyphicon-home"></i>
+                                Departmanlar
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Personel/Index">
+                                <i class="glyphicon glyphicon-th"></i>
+                                Personeller
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Admin/AdminIslemleri">
+                                <i class="glyphicon glyphicon-user"></i>
+                                Admin İşlemleri
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="/Home/Index">
+                                <i class="glyphicon glyphicon-remove-sign"></i>
+                                Çıkış
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        @*/Render Body*@
+        <div class="col-md-9">
+            <div class="profile-content">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</div>

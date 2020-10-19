@@ -1,0 +1,37 @@
+﻿@model OnlineKutuphanem.Models.Entity.Yazar
+@{
+    ViewBag.Title = "YazarGuncelle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+
+@using (Html.BeginForm("YazarGuncelle", "Yazar", FormMethod.Post))
+{
+    <div class="main-div">
+        <div class="panel">
+            <h2>Yazar Güncelle</h2>
+        </div>
+
+        <div class="form-group">
+            <label>Yazar ID</label>
+            <br />
+            @Html.TextBoxFor(y =>y.ID, new { @readonly = "readonly", @class = "form-control" })
+            <br />
+            <label>Yazar Adı</label>
+            <br />
+            @Html.TextBoxFor(y => y.AD, new { @class = "form-control" })
+            <label>Yazar Soyadı</label>
+            <br />
+            @Html.TextBoxFor(y => y.SOYAD, new { @class = "form-control" })
+            <label>Yazar Detay</label>
+            <br />
+            @Html.TextAreaFor(y => y.DETAY, new { @class = "form-control" })
+
+        </div>
+        <button type="submit" class="btn btn-success">Yazarı Güncelle</button>
+        <a href="/Yazar/Index" class="btn btn-primary"><i class="glyphicon glyphicon-menu-left"></i>    Yazar Listesine Dön</a>
+
+    </div>
+}
+

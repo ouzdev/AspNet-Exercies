@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bd6bd34517f44d2eb71611ce7fa44884" Name="Diagram1" ZoomLevel="42">
+        <EntityTypeShape EntityType="OnlineKutuphanemDBModel.Cezalar" Width="1.5" PointX="16.625" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineKutuphanemDBModel.Hareket" Width="1.5" PointX="14.375" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineKutuphanemDBModel.Kasa" Width="1.5" PointX="14.875" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineKutuphanemDBModel.Kategori" Width="1.5" PointX="9.875" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineKutuphanemDBModel.Kitap" Width="1.5" PointX="12.125" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineKutuphanemDBModel.Personel" Width="1.5" PointX="16.875" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineKutuphanemDBModel.sysdiagrams" Width="1.5" PointX="14.875" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineKutuphanemDBModel.Uyeler" Width="1.5" PointX="12.125" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineKutuphanemDBModel.Yazar" Width="1.5" PointX="9.875" PointY="5.5" IsExpanded="true" />
+        <AssociationConnector Association="OnlineKutuphanemDBModel.FK_Cezalar_Hareket" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineKutuphanemDBModel.FK_Cezalar_Uyeler" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineKutuphanemDBModel.FK_Hareket_Kitap" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineKutuphanemDBModel.FK_Hareket_Uyeler" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineKutuphanemDBModel.FK_Kitap_Kategori" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineKutuphanemDBModel.FK_Kitap_Yazar" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="OnlineKutuphanemDBModel.Hakkimizda" Width="1.5" PointX="9.75" PointY="3.75" />
+        <EntityTypeShape EntityType="OnlineKutuphanemDBModel.Iletisim" Width="1.5" PointX="16.875" PointY="6.875" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

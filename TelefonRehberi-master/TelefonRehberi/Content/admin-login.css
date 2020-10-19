@@ -1,0 +1,73 @@
+﻿body {
+    background: #59C173; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #5D26C1, #a17fe0, #59C173); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #5D26C1, #a17fe0, #59C173); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.login-container {
+    margin-top: 10%;
+    border: 1px solid #CCD1D1;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    max-width: 50%;
+}
+
+.ads {
+    background-color: #A569BD;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+    .ads h1 {
+        margin-top: 20%;
+    }
+
+#fl {
+    font-weight: 600;
+}
+
+#sl {
+    font-weight: 100 !important;
+}
+
+.profile-img {
+    text-align: center;
+}
+
+    .profile-img img {
+        border-radius: 50%;
+        /* animation: mymove 2s infinite; */
+    }
+
+@keyframes mymove {
+    from {
+        border: 1px solid #F2F3F4;
+    }
+
+    to {
+        border: 8px solid #F2F3F4;
+    }
+}
+
+.login-form {
+    padding: 15px;
+}
+
+    .login-form h3 {
+        text-align: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+.form-control {
+    font-size: 14px;
+}
+
+.forget-password a {
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 14px;
+}

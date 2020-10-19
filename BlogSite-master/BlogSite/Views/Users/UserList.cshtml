@@ -1,0 +1,119 @@
+﻿@using BlogSite.Models
+@model List<User>
+@{
+    ViewBag.Title = "Kullanıcı Listesi";
+    Layout = "~/Views/Shared/_AdminUI.cshtml";
+}
+
+<!-- Main content -->
+<div>
+    <a href="/Users/AddUser" class="btn btn-info btn-block"><span class="fa fa-user-plus"></span>  Kullanıcı Ekle</a>
+</div>
+
+<br />
+<section class="content">
+
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Kullanıcılar</h3>
+
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="card-body p-0">
+            <table class="table table-striped projects">
+                <thead>
+                    <tr>
+                        <th style="width: 1%">
+                            ID
+                        </th>
+                        <th style="width: 20%">
+                            Kullanıcı Adı Soyadı
+                        </th>
+                        <th style="width: 30%">
+                            E-Posta Adresi
+                        </th>
+                        <th>
+                            Blogda kullanmış olduğu kullanıcı adı
+                        </th>
+                        <th style="width: 8%" class="text-center">
+                            Durum
+                        </th>
+                        <th style="width: 20%">
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (User user in Model)
+                    {
+                        <tr>
+                            <td>
+                                @user.UserID
+                            </td>
+                            <td>
+                                <a>
+                                    @user.Name&nbsp;@user.Surname
+                                </a>
+                                <br />
+                                <small>
+                                    Kayıt Tarihi @user.SignUpDate
+                                </small>
+                            </td>
+                            <td>
+                                @user.Email
+                            </td>
+                            <td>
+                                <span class="badge badge-info">@user.Username</span>
+                            </td>
+                            <td class="project-state">
+                                @if (user.IsAdmin == true)
+                                {
+                                    <span class="badge badge-success">Admin</span>
+                                }
+                                else if (user.IsAuthor == true)
+                                {
+                                    <span class="badge badge-success">Yazar</span>
+                                }
+                                else
+                                {
+                                    <span class="badge badge-success">Kullanıcı</span>
+                                }
+                            </td>
+                            <td class="project-actions text-right">
+                                <a class="btn btn-primary btn-sm" href="#">
+                                    <i class="fas fa-folder">
+                                    </i>
+                                    Detaylar
+                                </a>
+                                <a class="btn btn-info btn-sm" href="#">
+                                    <i class="fas fa-pencil-alt">
+                                    </i>
+                                    Düzenle
+                                </a>
+                                <a class="btn btn-danger btn-sm" href="#">
+                                    <i class="fas fa-trash">
+                                    </i>
+                                    Sil
+                                </a>
+                            </td>
+                        </tr>
+                    }
+
+
+
+                </tbody>
+            </table>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+
+</section>
+<!-- /.content -->

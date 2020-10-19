@@ -1,0 +1,78 @@
+﻿@using BlogSite.Models
+@model BlogSite.Models.SiteSetting
+@{
+    ViewBag.Title = "BlogSettings";
+    Layout = "~/Views/Shared/_AdminUI.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">Blog Settings Form</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            @using (Html.BeginForm("BlogSettings", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+        <div class="card-body">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Site Title</label>
+                <input type="text" class="form-control" name="Title" id="exampleInputEmail1" placeholder="@Model.Title">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Description</label>
+                <input type="text" class="form-control" name="Description" id="exampleInputEmail1" placeholder="@Model.Description">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Keyowords</label>
+                <input type="text" class="form-control" name="Keywords" id="exampleInputEmail1" placeholder="@Model.Keywords">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputFile">Add Fovicon</label>
+                <div class="input-group">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" name="file" id="exampleInputFile">
+                        <label class="custom-file-label" for="exampleInputFile">Choose file (Fovicon Size 16x16 )</label>
+                    </div>
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="">Upload</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Google Analytics Kodu</label>
+                <input type="text" class="form-control" name="GoogleAnalytics" id="exampleInputEmail1" placeholder="@Model.GoogleAnalytics"
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Facebook</label>
+                <input type="text" class="form-control" name="FacebookUrl" id="exampleInputEmail1" placeholder="@Model.FacebookUrl"
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">LinkedIn</label>
+                <input type="text" class="form-control" name="LinkedinUrl" id="exampleInputEmail1" placeholder="@Model.LinkedinUrl">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Instagram</label>
+                <input type="text" class="form-control" name="InstagramUrl" id="exampleInputEmail1" placeholder="@Model.InstagramUrl">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Footer Description</label>
+                <textarea class="form-control" rows="3" name="FooterSignature" placeholder="Please write the footer signature (For example : Copyright FloryaCMS 2020)">@Model.FooterSignature</textarea>
+            </div>
+
+        </div>
+                <input type="hidden" name="SettingsID" value="1" />
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
+                </div>
+
+            }
+        </div>
+    </div>
+
+    <!-- /.content -->
+</div>

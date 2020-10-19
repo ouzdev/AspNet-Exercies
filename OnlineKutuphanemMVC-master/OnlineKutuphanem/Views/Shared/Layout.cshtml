@@ -1,0 +1,146 @@
+﻿
+@{
+    Layout = null;
+}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="~/Content/sidebar.css" rel="stylesheet" />
+<!------ Include the above in your HEAD tag ---------->
+<!--
+User Profile Sidebar by
+A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
+Licensed under MIT
+-->
+
+<div class="container">
+    <div class="row profile">
+        <div class="col-md-3">
+            <div class="profile-sidebar">
+                <!-- SIDEBAR USERPIC -->
+                <div class="profile-userpic">
+                    <img src="https://picsum.photos/150" class="img-responsive" alt="">
+                </div>
+                <!-- END SIDEBAR USERPIC -->
+                <!-- SIDEBAR USER TITLE -->
+                <div class="profile-usertitle">
+                    <div class="profile-usertitle-name">
+                        Oğuzcan Genç
+                    </div>
+                    @*<div class="profile-usertitle-job">
+                           .Net Developer
+                        </div>*@
+                </div>
+                <!-- END SIDEBAR USER TITLE -->
+                <!-- SIDEBAR BUTTONS -->
+                @*<div class="profile-userbuttons">
+                        <button type="button" class="btn btn-success btn-sm">Takip Et</button>
+                        <button type="button" class="btn btn-danger btn-sm">Mesaj</button>
+                    </div>*@
+                <!-- END SIDEBAR BUTTONS -->
+                <!-- SIDEBAR MENU -->
+                <div class="profile-usermenu">
+                    <ul class="nav">
+                        <li class="active">
+                            <a href="#">
+                                <i class="glyphicon glyphicon-home"></i>
+                                Anasayfa
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Kategori/Index">
+                                <i class="glyphicon glyphicon-th"></i>
+                                Kategori
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Kitap/Index">
+                                <i class="glyphicon glyphicon-book"></i>
+                                Kitaplar
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Yazar/Index">
+                                <i class="glyphicon glyphicon-pencil"></i>
+                                Yazarlar
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Uyeler/Index">
+                                <i class="glyphicon glyphicon-user"></i>
+                                Üyeler
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Personel/Index">
+                                <i class="glyphicon glyphicon-tower"></i>
+                                Personeller
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Odunc/Index">
+                                <i class="glyphicon glyphicon-hand-right"></i>
+                                Ödünç Kitap Al
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Odunc/OduncVer">
+                                <i class="glyphicon glyphicon-hand-left"></i>
+                                Ödünç Kitap Ver
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="glyphicon glyphicon-eur"></i>
+                                Kasa
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Islemler/Index">
+                                <i class="glyphicon glyphicon-random"></i>
+                                İşlemler
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/HavaDurumu/Index">
+                                <i class="glyphicon glyphicon-cloud"></i>
+                                Hava Durumu
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Istatislikler/Index">
+                                <i class="glyphicon glyphicon-calendar"></i>
+                                İstatislikler
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="glyphicon glyphicon-cog"></i>
+                                Ayarlar
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="glyphicon glyphicon-flash"></i>
+                                Yardım
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="glyphicon glyphicon-remove-sign"></i>
+                                Çıkış
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- END MENU -->
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="profile-content">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</div>

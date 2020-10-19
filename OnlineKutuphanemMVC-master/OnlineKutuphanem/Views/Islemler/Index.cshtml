@@ -1,0 +1,36 @@
+﻿@using OnlineKutuphanem.Models.Entity;
+@model List<Hareket>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>İşlemler Sayfası</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <td>İşlem ID</td>
+        <td>Kitap Adı</td>
+        <td>Üye</td>
+        <td>Personel</td>
+        <td>Alış Tarihi</td>
+        <td>İade Tarihi</td>
+        <td>Detaylar</td>
+
+
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Kitap1.AD</td>
+            <td>@item.Uyeler.AD&nbsp;@item.Uyeler.SOYAD</td>
+            <td>@item.PERSONEL</td>
+            <td>@Convert.ToDateTime(item.ALISTARIHI).ToString("dd/MM/yyyy")</td>
+            <td>@Convert.ToDateTime(item.IADETARIHI).ToString("dd/MM/yyyy")</td>
+            <td> @Html.ActionLink("Detaylar", "OduncIade", new { id = item.ID }, new { @class = "btn btn-success btn-sm btn- block" })</td>
+
+        </tr>
+    }
+</table>

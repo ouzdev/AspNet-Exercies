@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Kategori Ekle";
+    Layout = "~/Views/Shared/_AdminUI.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">@ViewBag.Title</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            @using (Html.BeginForm("CategoryAdd", "Category", FormMethod.Post))
+            {
+        <div class="card-body col-md-6">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Kategori Adı</label>
+                <input type="text" class="form-control" name="Name" id="exampleInputEmail1" placeholder="Lütfen kategorinin adını giriniz.">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Kategori Açıklaması </label>
+                <input type="text" class="form-control" name="Description" id="exampleInputEmail1" placeholder="Lütfen kategorinin açıklamasını giriniz.">
+            </div>
+            <input type="hidden"  name="RegisterDate" value="@DateTime.Now">
+            <input type="hidden"  name="IsActive" value="False">
+        </div>
+
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Kategoriyi Ekle</button>
+                </div>
+            }
+
+        </div>
+
+
+
+    </div>
+
+    <!-- /.content -->
+</div>
+

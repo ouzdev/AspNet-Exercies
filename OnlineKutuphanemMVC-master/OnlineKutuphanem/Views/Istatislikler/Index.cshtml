@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>İstatislikler</h2>
+
+<link href="~/Content/istatislik_css.css" rel="stylesheet" />
+<script src="~/Scripts/Chart1.js"></script>
+<div class="list_of_members">
+    <div class="sales">
+        <div class="icon">
+            <i class="dollar"></i>
+        </div>
+        <div class="icon-text">
+            <h3>@ViewBag.KasaTutarı</h3>
+            <p>Kasa Tutarı</p>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="new-users">
+        <div class="icon">
+            <i class="user1"></i>
+        </div>
+        <div class="icon-text">
+            <h3>@ViewBag.UyeSayisi</h3>
+            <p>Üye Sayısı</p>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="orders">
+        <div class="icon">
+            <i class="order"></i>
+        </div>
+        <div class="icon-text">
+            <h3>@ViewBag.KitapSayi</h3>
+            <p>Kitap Sayısı</p>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="visitors">
+        <div class="icon">
+            <i class="visit"></i>
+        </div>
+        <div class="icon-text">
+            <h3>@ViewBag.OduncSayi</h3>
+            <p>Ödünç</p>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<div class="total-sales">
+    <div class="user-trends">
+        <div class="alert-close7"> </div>
+
+        <canvas id="bar" height="340" width="780"></canvas>
+        <script>
+
+            var barChartData = {
+                labels: ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz"],
+                datasets: [
+                    {
+                        fillColor: "rgba(255, 137, 167, 0.78)",
+                        strokeColor: "rgba(220,220,220,1)",
+                        data: [65, 59, 90, 81, 56, 55, 40]
+                    },
+                    {
+                        fillColor: "rgba(140, 145, 255, 0.69)",
+                        strokeColor: "rgba(151,187,205,1)",
+                        data: [28, 48, 40, 19, 96, 27, 100]
+                    }
+                ]
+
+            }
+
+            var myLine = new Chart(document.getElementById("bar").getContext("2d")).Bar(barChartData);
+
+        </script>
+    </div>
+   
+    <div class="clearfix"></div>
+</div>			

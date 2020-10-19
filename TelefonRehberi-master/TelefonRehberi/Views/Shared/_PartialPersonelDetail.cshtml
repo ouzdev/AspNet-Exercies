@@ -1,0 +1,24 @@
+﻿<div class="modal-body">
+    <h5>Personel İsim</h5>
+    <p><b>@ViewBag.isim</b></p>
+    <hr>
+    <h5>Personel Telefon Numarası</h5>
+    <p><b>@ViewBag.telefon</b></p>
+    <hr>
+    <h5>Personel Departman Bilgisi</h5>
+    <p><b>@ViewBag.departman</b></p>
+    <hr>
+    <h5>Personelin Yöneticisi</h5>
+    @if (ViewBag.yonetici != null)
+    {
+        <p><b>@ViewBag.yonetici</b></p>
+    }
+    else
+    {
+        <p><b>Yöneticisi Yok</b></p>
+    }
+    <hr>
+    <h5>Personel Detay Bilgileri</h5>
+    <p><b>@ViewBag.detay</b></p>
+    <hr>
+</div>

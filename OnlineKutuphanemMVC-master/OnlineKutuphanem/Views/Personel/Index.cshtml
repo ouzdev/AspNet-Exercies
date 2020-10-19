@@ -1,0 +1,33 @@
+﻿@using OnlineKutuphanem.Models.Entity;
+@model List<Personel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+
+
+<h2>Personel Sayfası</h2>
+<a href="/Personel/PersonelEkle"><button class="btn btn-primary">Personel Ekle</button></a>
+<br />
+<br />
+
+<table class="table table-hover">
+    <tr>
+        <td width="10"><b>ID</b></td>
+        <td><b>Personel İsim</b></td>
+        <td><b>Güncelle</b></td>
+        <td><b>Sil</b></td>
+    </tr>
+    @foreach (var personel in Model)
+    {
+        <tr>
+            <td>@personel.ID</td>
+            <td>@personel.PERSONEL1</td>
+            <td width="30">@Html.ActionLink("Güncelle", "PersonelGuncelle", new { id = personel.ID }, new { @class = "btn btn-success btn-sm" })</td>
+            <td width="20">@Html.ActionLink("Sil", "PersonelSil", new { id = personel.ID }, new { @class = "btn btn-danger btn-sm", onclick = "return confirm('Yazarı Silmek İstediğinizden Eminmisiniz ?')" })</td>
+        </tr>
+    }
+
+</table>
