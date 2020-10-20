@@ -6,5 +6,5 @@ C Sharp (C#), Asp.Net ve .Net Core MVC geliştirdiğim uygulamaları içeren rep
 - **Blog Site** => Asp.Net MVC 5 ve katmanlı mimari bakış açısıyla geliştdirdiğim basit bir blog projesidir.
 -  **Online Kütüphanem** => Asp.Net MVC 5 ile geliştirdiğim kütüphane otomasyon uygulamasıdır.
 - **Telefon Rehberi**=> Asp.Net MVC 5 ile geliştirdiğim çok fonksiyonlu bir telefon rehberi uygulamasıdır.
-- **Wep API Training** => Web api projelerini geliştirdiğim genel bir uygulama dizinidir.
+- **Wep API Training** => Web api projeleri geliştirdiğim genel bir uygulama dizinidir.
 - **NortWind** => Northwind veritanının nasıl kurulacağını anlattığım video içeriğe ait olan dosyaları içeren dizindir.
